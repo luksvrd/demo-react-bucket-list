@@ -1,7 +1,12 @@
+import { useState } from "react";
 import Bucket from "./components/Bucket";
 import Form from "./components/BucketForm";
 
+const buckets = JSON.parse(localStorage.getItem("buckets"));
+
 function App() {
+  const [bucketList] = useState(buckets);
+
   return (
     <>
       <h1 className="my-8 text-center text-4xl underline">🪣 List 👩🏾‍💻</h1>
