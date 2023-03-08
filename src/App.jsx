@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import Bucket from "./components/Bucket";
 import Form from "./components/BucketForm";
+import reducer from "./bucket-list-reducer";
 
 const buckets = JSON.parse(localStorage.getItem("buckets"));
 
 function App() {
-  const [bucketList] = useState(buckets);
+  const [state, dispatch] = useReducer(reducer, buckets);
 
   return (
     <>
@@ -14,7 +15,7 @@ function App() {
       <main className="container mx-auto flex flex-col items-center gap-y-10 divide-y">
         <Form />
         <ul className="space-y-6 py-8">
-          {bucketList?.map((bucket) => (
+          {state?.map((bucket) => (
             <Bucket key={bucket.id} bucket={bucket} />
           ))}
         </ul>
