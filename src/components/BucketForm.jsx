@@ -1,11 +1,12 @@
 import { Slider, TextInput } from "./form";
+import PropTypes from "prop-types";
 
-export default function BucketForm() {
+export default function BucketForm({ handleSubmit }) {
   return (
-    <form className="flex flex-col space-y-4">
+    <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
       <TextInput
         label="Bucket Text"
-        id="bucket-text"
+        id="bucketText"
         placeholder="Add to your bucket list"
       />
       <Slider label="Importance" min={1} max={3} id="importance" />
@@ -18,3 +19,7 @@ export default function BucketForm() {
     </form>
   );
 }
+
+BucketForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+};
