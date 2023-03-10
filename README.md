@@ -17,7 +17,7 @@ This is a demo of a React list component.
 
 Put this in your browser's local storage. Use the 🔑 'buckets' 🪣.
 
-Then, add this **outside of your component code 💭** in `App.jsx`: `const buckets = JSON.parse(localStorage.getItem("buckets"));`
+Then, add this **outside of your component function 💭** in `App.jsx`: `const buckets = JSON.parse(localStorage.getItem("buckets"));`
 
 ---
 
